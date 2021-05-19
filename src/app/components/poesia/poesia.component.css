@@ -1,0 +1,29 @@
+
+.color{
+    background-color: #c0e5e8a2;
+    box-sizing: border-box;
+    background-attachment: fixed;
+}
+.Titulo{
+    text-align: center; 
+    display: flex; 
+    font-family: 'Akaya Telivigala', cursive;
+    letter-spacing: 1px;
+    margin: 10px;
+}
+
+.Descripción{
+    letter-spacing: 1px;
+    font-family: 'Akaya Telivigala', cursive;
+    color:black;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 5px;
+}
+
+.image{
+    margin: 30px;
+    height: 350px;
+    width: 350px;
+    
+}

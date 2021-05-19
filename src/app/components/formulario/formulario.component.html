@@ -1,0 +1,46 @@
+<!-- Titulo -->
+<article class="title" id="Inicio">
+<h1>Pazafira</h1>
+</article>
+
+
+ 
+  <!-- Formulario -->
+    <div>
+  <form class="container colorform" [formGroup]="createFormulario" (ngSubmit)= "sendData()">
+ 
+    <div class="form-group" style="font-family: 'Akaya Telivigala', cursive" >
+        <label for="Nombre">Nombre completo</label>
+        <input type="text" class="form-control" id="Nombre"  placeholder="Escribe tu nombre" formControlName="Nombre" >
+      </div>
+      <div class="form-group" style="font-family: 'Akaya Telivigala', cursive">
+        <label for="Email">Correo electronico</label>
+        <input type="email" class="form-control" id="Email" placeholder="name@example.com" formControlName="Email">
+      </div>
+      <div class="form-group" style="font-family: 'Akaya Telivigala', cursive">
+        <label for="Celular">Celular</label>
+        <input type="number" class="form-control" id="Celular" placeholder="Escribe tu celular" formControlName="Celular">
+      </div>
+      <div class="form-group" style="font-family: 'Akaya Telivigala', cursive">
+        <label for="EscogerProducto">Escoge tu producto</label>
+        <select class="form-control" id="EscogerProducto">
+          <option>Pocillo</option>
+          <option>Botella</option>
+        </select>
+      </div>
+      <div class="form-group" style="font-family: 'Akaya Telivigala', cursive">
+        <label for="EscogerFrase">Escoge tu frase</label>
+        <select multiple class="form-control" id="EscogerFrase">
+          <option>Tus ojos brillan como estrellas</option>
+          <option>Margaritas y una botella de vino, ahí comienza mi triste historia</option>
+          <option>Ni si quiera la luz de la luna es tan brillante como tu </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="FrasePersonalizada">Escribe tu propia frase si no deseas ninguna de las anteriores</label>
+        <textarea class="form-control" id="FrasePersonalizada" rows="3"></textarea>
+      </div>
+      <button>Enviar</button>
+    </form>
+    
+    <br> <br>

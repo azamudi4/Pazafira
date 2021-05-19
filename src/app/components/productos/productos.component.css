@@ -1,0 +1,28 @@
+
+.Titulo-producto{  
+    text-align: center;
+    display: flex; 
+    font-family: 'Akaya Telivigala', cursive;
+    letter-spacing: 1px;
+    margin: 10px;
+}
+
+.carousel-item img{
+    width: 50%;
+    height: 50%;
+    margin: 0px 0% 0% 27%;
+}
+
+.Descripción-producto{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    font-family: 'Akaya Telivigala', cursive;
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin: 30px;
+}
+
+.card-body{
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+.colorform {
+    background-color: rgba(221, 98, 119, 0.562);
+    width: 70%;
+    margin: 0 auto;
+    height: 650px;
+    font-family: 'Akaya Telivigala', cursive ;
+}
+
+.boton-div{
+    margin: 0 auto;
+    background-color: rgba(221, 98, 119, 0.562);
+    height: 70px;
+    width: 70%;
+    
+}
+
+.boton{
+    height: 30px;
+    width: 200px;
+    margin: 0 38% ;
+}

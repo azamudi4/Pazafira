@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url(assets/fondo2.jpg);
+    box-sizing: border-box;
+    background-attachment: fixed;
+    
+}
+
+.title{
+    color: purple;
+    text-align: center;
+    font-family:Akaya Telivigala, cursive;
+    font-size: 38px;
+    letter-spacing: 1px;
+    margin: 50px;
+}

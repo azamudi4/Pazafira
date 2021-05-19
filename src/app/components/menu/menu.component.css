@@ -1,0 +1,20 @@
+
+.color{
+    background-color: #c0e5e8a2;
+    box-sizing: border-box;
+    background-attachment: fixed;
+}
+
+.colorletras{
+    color: purple !important;
+    font-family:Akaya Telivigala, cursive ;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin: 10px !important;
+
+}
+
+.navbar-collapse li :hover{
+    text-decoration: overline;
+    color: rgb(11, 189, 243) !important;
+}
