@@ -23,24 +23,24 @@
       </div>
       <div class="form-group" style="font-family: 'Akaya Telivigala', cursive">
         <label for="EscogerProducto">Escoge tu producto</label>
-        <select class="form-control" id="EscogerProducto">
-          <option>Pocillo</option>
-          <option>Botella</option>
+        <select class="form-control" id="EscogerProducto" formControlName="EscogerProducto">
+          <option value="Pocillo">Pocillo</option>
+          <option value="Botella">Botella</option>
         </select>
       </div>
       <div class="form-group" style="font-family: 'Akaya Telivigala', cursive">
         <label for="EscogerFrase">Escoge tu frase</label>
-        <select multiple class="form-control" id="EscogerFrase">
-          <option>Tus ojos brillan como estrellas</option>
-          <option>Margaritas y una botella de vino, ahí comienza mi triste historia</option>
-          <option>Ni si quiera la luz de la luna es tan brillante como tu </option>
+        <select multiple class="form-control" id="EscogerFrase" formControlName="EscogerFrase">
+          <option value="Tus ojos brillan como estrellas">Tus ojos brillan como estrellas</option>
+          <option value="Margaritas y una botella de vino, ahí comienza mi triste historia">Margaritas y una botella de vino, ahí comienza mi triste historia</option>
+          <option value="Ni si quiera la luz de la luna es tan brillante como tu ">Ni si quiera la luz de la luna es tan brillante como tu </option>
         </select>
       </div>
       <div class="form-group">
         <label for="FrasePersonalizada">Escribe tu propia frase si no deseas ninguna de las anteriores</label>
-        <textarea class="form-control" id="FrasePersonalizada" rows="3"></textarea>
+        <textarea class="form-control" id="FrasePersonalizada" formControlName="FrasePersonalizada" rows="3"></textarea>
       </div>
-      <button>Enviar</button>
+      <button class="boton">Enviar</button>
     </form>
     
     <br> <br>

@@ -15,6 +15,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { PoesiaComponent } from './components/poesia/poesia.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
     ProductosComponent,
     PoesiaComponent,
     FormularioComponent,
-    NosotrosComponent
+    NosotrosComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule, routing,

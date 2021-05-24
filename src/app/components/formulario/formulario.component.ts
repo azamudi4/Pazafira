@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators, FormGroup} from '@angular/forms'
+const swal = require ("sweetalert")
  
 /**
  * FormBuilder: Contruye el formulario
@@ -15,6 +16,7 @@ import {FormBuilder, Validators, FormGroup} from '@angular/forms'
 export class FormularioComponent implements OnInit {
  
   createFormulario: FormGroup
+  createFormoptions: FormGroup
  
   constructor(
     private formBuilder: FormBuilder
@@ -30,14 +32,31 @@ export class FormularioComponent implements OnInit {
     this.createFormulario = this.formBuilder.group({
       Nombre:["",[Validators.required]],
       Email:["", [Validators.required, Validators.email]],
-    Celular:["",[Validators.required]]
+    Celular:["",[Validators.required]],
+    EscogerProducto:["",[ Validators.required]],
     })
+    this.createFormoptions = this.formBuilder.group({
+      EscogerFrase:["",[ ]],
+      FrasePersonalizada:["",[ ]]
+    })
+
   } sendData(){
+
+    console.log(this.createFormoptions.get("EscogerFrase").value)
+    console.log(this.createFormoptions.get("FrasePersonalizada").value)
+    
     if (this.createFormulario.valid){
-      alert("Se envío la información")
+      swal("¡Muy bien!", "Se envío la información !", "success");
     }else{
-      alert("No se envío la información")
+      swal("Error", "No se envío la información !", "error");
     }
+    if (this.createFormoptions.valid) {
+      
+    } else{
+       swal("¡Alerta!", "Debes escoger o escribir una frase !", "info");
+    }
+
+    
   }
  
 }
