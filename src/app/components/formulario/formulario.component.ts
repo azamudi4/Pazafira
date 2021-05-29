@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, Validators, FormGroup} from '@angular/forms'
+import { FormBuilder, Validators, FormGroup } from '@angular/forms'
+import { FormService } from '../../Services/form.service';
+import { Router } from '@angular/router'
 const swal = require ("sweetalert")
  
 /**
@@ -16,10 +18,11 @@ const swal = require ("sweetalert")
 export class FormularioComponent implements OnInit {
  
   createFormulario: FormGroup
-  createFormoptions: FormGroup
  
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private forrmService: FormService,
+    private router: Router
   ) { this.validator()
     //En el contructor valido lo que está dentro de la clase
    }
@@ -30,31 +33,35 @@ export class FormularioComponent implements OnInit {
  
   validator(){
     this.createFormulario = this.formBuilder.group({
-      Nombre:["",[Validators.required]],
+      CompleteName:["",[Validators.required]],
       Email:["", [Validators.required, Validators.email]],
-    Celular:["",[Validators.required]],
-    EscogerProducto:["",[ Validators.required]],
-    })
-    this.createFormoptions = this.formBuilder.group({
-      EscogerFrase:["",[ ]],
-      FrasePersonalizada:["",[ ]]
+      PhoneNumber:["",[Validators.required]],
+      ProductName:["",[ Validators.required]],
+      chooseQuote:["",[ ]],
+      writeQuote:["",[ ]]
     })
 
   } sendData(){
 
-    console.log(this.createFormoptions.get("EscogerFrase").value)
-    console.log(this.createFormoptions.get("FrasePersonalizada").value)
+    // console.log(this.createFormoptions.get("EscogerFrase").value)
+    // console.log(this.createFormoptions.get("FrasePersonalizada").value)
     
     if (this.createFormulario.valid){
-      swal("¡Muy bien!", "Se envío la información !", "success");
+      this.forrmService.create(this.createFormulario.value).subscribe(
+        (FormCreated)=>{
+          console.log(FormCreated)
+          swal("¡Muy bien!", "Se ha envíado la información", "success");
+        }
+      ), (error)=>{
+      swal("¡Error!", "No se ha podido enviar la información", "error");
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(
+        ()=>
+        this.router.navigate(['/productos'])
+      )
+      }
     }else{
-      swal("Error", "No se envío la información !", "error");
-    }
-    if (this.createFormoptions.valid) {
-      
-    } else{
-       swal("¡Alerta!", "Debes escoger o escribir una frase !", "info");
-    }
+      swal("¡Alerta!", "Debes llenar todos los campos", "info");
+    } 
 
     
   }

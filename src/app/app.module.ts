@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing } from './app.routing';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 /**
  * ReactiveFormsModule: Formularios reactivos, son formularios que reaccionan a las interacciones del usuario
@@ -15,7 +16,6 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { PoesiaComponent } from './components/poesia/poesia.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
-import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +26,12 @@ import { ProductComponent } from './components/product/product.component';
     PoesiaComponent,
     FormularioComponent,
     NosotrosComponent,
-    ProductComponent
   ],
   imports: [
     BrowserModule, routing,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
