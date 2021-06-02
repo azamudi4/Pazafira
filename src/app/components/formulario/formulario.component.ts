@@ -17,7 +17,7 @@ const swal = require ("sweetalert")
 })
 export class FormularioComponent implements OnInit {
  
-  createFormulario: FormGroup
+  createUserForm: FormGroup
  
   constructor(
     private formBuilder: FormBuilder,
@@ -32,7 +32,7 @@ export class FormularioComponent implements OnInit {
   }
  
   validator(){
-    this.createFormulario = this.formBuilder.group({
+    this.createUserForm = this.formBuilder.group({
       CompleteName:["",[Validators.required]],
       Email:["", [Validators.required, Validators.email]],
       PhoneNumber:["",[Validators.required]],
@@ -46,24 +46,25 @@ export class FormularioComponent implements OnInit {
     // console.log(this.createFormoptions.get("EscogerFrase").value)
     // console.log(this.createFormoptions.get("FrasePersonalizada").value)
     
-    if (this.createFormulario.valid){
-      this.forrmService.create(this.createFormulario.value).subscribe(
+    if (this.createUserForm.valid){
+      console.log(this.createUserForm.value)
+      this.forrmService.create(this.createUserForm.value).subscribe(
         (FormCreated)=>{
           console.log(FormCreated)
           swal("¡Muy bien!", "Se ha envíado la información", "success");
         }
-      ), (error)=>{
+      ),  
+     (error)=>{
       swal("¡Error!", "No se ha podido enviar la información", "error");
-      this.router.navigateByUrl('/', {skipLocationChange: true}).then(
-        ()=>
-        this.router.navigate(['/productos'])
-      )
-      }
+    }
+
     }else{
       swal("¡Alerta!", "Debes llenar todos los campos", "info");
     } 
 
-    
+  this.router.navigateByUrl('/', {skipLocationChange: true}).then(
+    ()=>
+    this.router.navigate(['/formulario'])
+  )
   }
- 
 }

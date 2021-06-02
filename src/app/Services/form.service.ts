@@ -11,9 +11,8 @@ export class FormService {
     private http: HttpClient
   ) { }
 
-    create(fromData){
-      return this.http.post<User>(`${this.apiURL}/User/create`, FormData)
-  
+    create(FormData){
+      return this.http.post<User>(`${this.apiURL}/User/create`, FormData)  
     }
 
   }
