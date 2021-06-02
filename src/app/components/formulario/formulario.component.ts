@@ -64,7 +64,7 @@ export class FormularioComponent implements OnInit {
 
   this.router.navigateByUrl('/', {skipLocationChange: true}).then(
     ()=>
-    this.router.navigate(['/formulario'])
+    this.router.navigate(['/Formulario'])
   )
   }
 }

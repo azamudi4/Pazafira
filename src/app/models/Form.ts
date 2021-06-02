@@ -1,9 +1,9 @@
 export interface User {
-id : String,
+id: String,
 CompleteName: String,
-Email : String,
-PhoneNumber : Number,
+Email: String,
+PhoneNumber: Number,
 ProductName: String,
-writeQuote: String,
 chooseQuote: String,
+writeQuote: String
 }
